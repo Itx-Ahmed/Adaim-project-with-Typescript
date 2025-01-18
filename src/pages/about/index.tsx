@@ -5,7 +5,7 @@ HeroSection;
 function About() {
   return (
     <HeroSection
-      backgroundImage="images/home/containerpic.jpg"
+      ContainerImage="images/home/containerpic.jpg"
       title="About"
       description="Welcome to Ad-Aim Marketing Agency"
     />
