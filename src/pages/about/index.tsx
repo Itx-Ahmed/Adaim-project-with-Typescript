@@ -1,7 +1,5 @@
 import HeroSection from "../../components/banner";
 
-HeroSection;
-
 function About() {
   return (
     <HeroSection
