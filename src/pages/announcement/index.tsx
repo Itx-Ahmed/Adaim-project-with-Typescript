@@ -1,9 +1,9 @@
 import HeroSection from "../../components/banner";
 
-function Announcement() {
+function AnnouncementPage() {
   return (
     <HeroSection
-      ContainerImage="images/home/containerpic.jpg"
+      backgroundimage="images/home/containerpic.jpg"
       title="Our Announcements"
       description="At Ad-Aim Agency, we specialize in crafting captivating campaigns that speak directly to your audience's hearts. With our strategic approach and creative finesse, we aim to elevate your brand to new heights and drive meaningful engagement.
        Our Announcement
@@ -12,4 +12,4 @@ function Announcement() {
   );
 }
 
-export default Announcement;
+export default AnnouncementPage;
