@@ -1,5 +1,5 @@
 type THeroSectionProps = {
-  backgroundimage: string; // Ensure prop name matches
+  backgroundimage: string;
   title: string;
   description: string;
 };
@@ -10,7 +10,7 @@ function HeroSection(props: THeroSectionProps) {
       {/* Background Image */}
       <div className="h-screen bg-[#F3F3F3] relative mt-[102px]">
         <img
-          src={props.backgroundimage} // Use the same name for the prop
+          src={props.backgroundimage}
           alt={props.title}
           className="w-full h-full object-cover"
         />
