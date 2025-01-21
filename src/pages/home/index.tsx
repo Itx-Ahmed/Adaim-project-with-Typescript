@@ -1,15 +1,15 @@
-import HeroSection from "../../components/banner"; // Ensure correct import path
+import HeroSection from "../../components/banner";
 
 function HomePage() {
   return (
     <HeroSection
-      backgroundimage="/images/home/containerpic1.jpg" // Ensure image path is correct
+      backgroundimage="/images/home/containerpic1.jpg"
       title="Ad Aim Marketing Agency"
       description="Where precision meets impact, delivering excellence for your brand’s success"
       sliderImages={[
-        "/images/home/containerpic1.jpg", // Image 1
-        "/images/home/containerpic2.jpg", // Image 2
-        "/images/home/containerpic3.jpg", // Image 3
+        "/images/home/containerpic1.jpg",
+        "/images/home/containerpic2.jpg",
+        "/images/home/containerpic3.jpg",
       ]}
     />
   );

@@ -1,8 +1,8 @@
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react"; // Correct Swiper import
-import "swiper/css"; // Import Swiper styles
-import "swiper/css/navigation"; // Import Swiper Navigation styles
-import "swiper/css/pagination"; // Import Swiper Pagination styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // Define the props for the HeroSection
 type THeroSectionProps = {
@@ -20,8 +20,8 @@ function HeroSection(props: THeroSectionProps) {
         <Swiper
           navigation={true}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          pagination={{ clickable: true }} // Pagination added
-          modules={[Navigation, Autoplay, Pagination]} // Add Pagination module here
+          pagination={{ clickable: true }}
+          modules={[Navigation, Autoplay, Pagination]}
           className="mySwiper"
         >
           {props.sliderImages.map((image, index) => (

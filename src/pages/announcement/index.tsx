@@ -9,9 +9,9 @@ function AnnouncementPage() {
        Our Announcement
        No Announcement available"
       sliderImages={[
-        "/images/home/containerpic1.jpg", // Image 1
-        "/images/home/containerpic2.jpg", // Image 2
-        "/images/home/containerpic3.jpg", // Image 3
+        "/images/home/containerpic1.jpg",
+        "/images/home/containerpic2.jpg",
+        "/images/home/containerpic3.jpg",
       ]}
     />
   );
