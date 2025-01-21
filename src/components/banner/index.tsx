@@ -31,7 +31,7 @@ function HeroSection(props: THeroSectionProps) {
                 <img
                   src={image}
                   alt={`Slide ${index + 1}`}
-                  className="w-full h-[100vh] object-cover"
+                  className="w-full  h-auto h-[100vh] object-cover"
                 />
 
                 {/* Content Section inside each slide */}
