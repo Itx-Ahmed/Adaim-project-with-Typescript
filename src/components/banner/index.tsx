@@ -37,7 +37,7 @@ function HeroSection(props: THeroSectionProps) {
                 {/* Content Section inside each slide */}
                 <div className="absolute top-1/2 left-8 transform -translate-y-1/2 text-black mx-4 px-4 w-full z-10">
                   <div className="flex flex-col items-start justify-center text-left">
-                    <h1 className="text-3xl font-bold mb-2 sm:text-4xl md:text-5xl">
+                    <h1 className="text-3xl font-bold mb-2 sm:text-4xl md:text-3xl">
                       {props.title}
                     </h1>
                     <p className="text-base font-light sm:text-lg md:text-xl w-[80%] md:w-[40%]">
