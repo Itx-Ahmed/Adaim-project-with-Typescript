@@ -61,7 +61,6 @@ const sliderImages = [
 function HomePage() {
   return (
     <div>
-      {/* Hero Section */}
       <HeroSection
         backgroundimage="/images/home/containerpic1.jpg"
         title="Ad Aim Marketing Agency"
@@ -69,10 +68,9 @@ function HomePage() {
         sliderImages={sliderImages}
       />
 
-      {/* Social Media Marketing Section */}
       <SocialMediaMarketing
         title={SocialMediaMarketingData.title}
-        services={SocialMediaMarketingData.services} // Only passing the services data now
+        services={SocialMediaMarketingData.services}
       />
     </div>
   );
