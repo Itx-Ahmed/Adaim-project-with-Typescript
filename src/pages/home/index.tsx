@@ -1,5 +1,4 @@
 import HeroSection from "../../components/banner";
-import SocialMediaCard from "../../components/SocialMediaCards";
 import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 
 const sliderImages = [
