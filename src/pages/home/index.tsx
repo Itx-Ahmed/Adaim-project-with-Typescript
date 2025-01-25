@@ -1,4 +1,5 @@
 import HeroSection from "../../components/banner";
+import SocialMediaCard from "../../components/SocialMediaCards";
 import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 import OurTeam from "../../components/home/our-Team";
 
@@ -83,6 +84,7 @@ function HomePage() {
         description="Where precision meets impact, delivering excellence for your brand’s success"
         sliderImages={sliderImages}
       />
+      <HelpSuccessBanner />
 
       <div className="mt-16 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
