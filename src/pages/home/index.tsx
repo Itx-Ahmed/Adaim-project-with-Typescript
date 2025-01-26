@@ -1,5 +1,13 @@
 import HeroSection from "../../components/banner";
-import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaTiktok,
+  FaGoogle,
+  FaFilm,
+} from "react-icons/fa";
+import { SiShopify } from "react-icons/si";
 
 const sliderImages = [
   "/images/home/containerpic1.jpg",
@@ -41,7 +49,7 @@ const marketingData = [
     title: "Google Ads",
     description:
       "Enhance your online presence and maximize your digital reach with our targeted and expert Google Ads solutions and strategies.",
-    icon: FaFacebook,
+    icon: FaGoogle,
   },
   {
     id: 6,
@@ -62,14 +70,14 @@ const marketingData = [
     title: "Video Editing",
     description:
       "Enhance your video content and captivate your audience with our professional and tailored video editing services and solutions.",
-    icon: FaYoutube,
+    icon: FaFilm,
   },
   {
     id: 9,
     title: "Shopify Marketing",
     description:
       "Boost your online store's visibility and elevate your e-commerce business with our specialized and tailored Shopify marketing strategies and solutions.",
-    icon: FaFacebook,
+    icon: SiShopify,
   },
 ];
 
