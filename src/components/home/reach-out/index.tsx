@@ -18,7 +18,7 @@ function ReachOut() {
         </address>
 
         <p className="text-lg font-medium">
-          Email:{" "}
+          Email:
           <a
             href="mailto:adaimmarketingagency@gmail.com"
             className="text-blue-500 hover:underline"
