@@ -84,8 +84,8 @@ function HomePage() {
         description="Where precision meets impact, delivering excellence for your brand’s success"
         sliderImages={sliderImages}
       />
-      <HelpSuccessBanner />
 
+      <HelpSuccessBanner />
       <div className="mt-16 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
           Social Media Platform Marketing Services
@@ -110,6 +110,7 @@ function HomePage() {
           </div>
         ))}
       </div>
+
       <OurTeam />
     </>
   );
