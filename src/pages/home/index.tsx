@@ -1,6 +1,6 @@
 import HeroSection from "../../components/banner";
-import CEOProfile from "../../components/home/CEO-Profile";
 import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
+import CEOProfile from "../../components/home/CEO-Profile";
 
 const sliderImages = [
   "/images/home/containerpic1.jpg",
