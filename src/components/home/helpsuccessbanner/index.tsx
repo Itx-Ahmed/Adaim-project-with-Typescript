@@ -6,7 +6,7 @@ function HelpSuccessBanner() {
       </h1>
       <p className="text-center mt-4 text-sm md:text-lg">
         Success! How can I help you? AD AIM Marketing seamlessly integrates
-        customer relationship management solutions to ensure personalized and
+        customer relationship management solutions to en.sure personalized and
         targeted marketing strategies for enhanced client engagement.
       </p>
     </div>
