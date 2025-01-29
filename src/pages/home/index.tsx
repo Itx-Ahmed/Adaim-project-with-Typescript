@@ -1,5 +1,4 @@
 import HelpSuccessBanner from "../../components/home/helpsuccessbanner";
-import CEOProfile from "../../components/home/CEO-Profile";
 import HeroSection from "../../components/banner";
 import {
   FaFacebook,
@@ -11,6 +10,7 @@ import {
   FaShopify,
 } from "react-icons/fa";
 import OurTeam from "../../components/home/our-Team";
+import CEOProfile from "../../components/home/CEO-Profile";
 import OurCustomers from "../../components/home/our-customers";
 import ReachOut from "../../components/home/reach-out";
 
@@ -96,7 +96,7 @@ function HomePage() {
         sliderImages={sliderImages}
       />
       <HelpSuccessBanner />
-      <CEOProfile />
+
       <section className="my-16 px-6 py-12 bg-gradient-to-r from-blue-100 to-blue-50">
         <h2 className="text-3xl font-bold text-center mb-10">
           Social Media Platform Marketing Services
@@ -120,6 +120,7 @@ function HomePage() {
       </section>
 
       <OurTeam />
+      <CEOProfile />
       <OurCustomers />
       <ReachOut />
     </>
