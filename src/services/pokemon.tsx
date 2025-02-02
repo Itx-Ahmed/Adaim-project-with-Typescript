@@ -1,14 +1,17 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { Pokemon } from "./types";
 
-export const pokemonApi = createApi({
-  reducerPath: "pokemonApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "" }),
+export const loginApi = createApi({
+  reducerPath: "loginApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3009/api" }),
   endpoints: (builder) => ({
-    getPokemonByName: builder.query<Pokemon, string>({
-      query: (name) => `pokemon/${name}`,
+    loginUser: builder.mutation({
+      query: (userData) => ({
+        url: "auth/login",
+        method: "POST",
+        body: userData,
+      }),
     }),
   }),
 });
 
-export const { useGetPokemonByNameQuery } = pokemonApi;
+export const { useLoginUserMutation } = loginApi;
