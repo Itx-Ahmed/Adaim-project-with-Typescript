@@ -1,6 +1,5 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useLoginUserMutation } from "../../services/LoginApi";
 
 function Login() {
   const validationSchema = Yup.object({
@@ -18,11 +17,7 @@ function Login() {
       password: "",
     },
     validationSchema,
-    onSubmit: (values) => {
-      alert("Login successful");
-      const { data, error, isLoading } = useLoginUserMutation();
-      console.log(data);
-    },
+    onSubmit: (values) => {},
   });
 
   return (
