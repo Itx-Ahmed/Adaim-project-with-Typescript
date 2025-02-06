@@ -34,6 +34,7 @@ function Header() {
           <Link to="/contact" className="hover:text-gray-400">
             Contact
           </Link>
+
           <button
             className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
             onClick={() => (window.location.href = "tel:+1234567890")}

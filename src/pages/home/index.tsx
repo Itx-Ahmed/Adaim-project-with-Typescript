@@ -4,6 +4,7 @@ import CEOProfile from "../../components/home/ceo-profile";
 import OurTeam from "../../components/home/our-Team";
 import OurCustomers from "../../components/home/our-customers";
 import ReachOut from "../../components/home/reach-out";
+
 import {
   FaFacebook,
   FaInstagram,

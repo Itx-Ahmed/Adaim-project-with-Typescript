@@ -17,7 +17,30 @@ function Login() {
       password: "",
     },
     validationSchema,
+<<<<<<< HEAD
     onSubmit: () => {},
+=======
+    onSubmit: async (values) => {
+      try {
+        const responseData = await fetch("http://localhost:3009/api/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+
+        const data = await responseData.json();
+        console.log("Check the Data:", data);
+
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        }
+      } catch (error) {
+        console.error("Something went wrong, try again", error);
+      }
+    },
+>>>>>>> main
   });
 
   return (
