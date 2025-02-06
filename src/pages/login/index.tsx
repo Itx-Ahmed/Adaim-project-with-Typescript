@@ -17,6 +17,9 @@ function Login() {
       password: "",
     },
     validationSchema,
+<<<<<<< HEAD
+    onSubmit: () => {},
+=======
     onSubmit: async (values) => {
       try {
         const responseData = await fetch("http://localhost:3009/api/login", {
@@ -37,6 +40,7 @@ function Login() {
         console.error("Something went wrong, try again", error);
       }
     },
+>>>>>>> main
   });
 
   return (
