@@ -4,10 +4,10 @@ import { fetchUserData } from "../../../api/user/quries";
 function DashboardUsersPage() {
   const { data, error, isLoading } = useQuery({
     queryKey: ["userData"],
-    queryFn: fetchUserData, // Call the function from Queries.tsx
+    queryFn: fetchUserData,
   });
 
-  console.log("User data response:", data); // Console mein data dekhne ke liye
+  console.log("User data response:", data);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p className="text-red-600">Error: {error.message}</p>;
