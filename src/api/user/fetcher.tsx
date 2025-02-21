@@ -22,3 +22,28 @@ export const asyncLoginUser = async (data: any) => {
     throw error.response.data;
   }
 };
+
+export const asyncGetAllUsers = async () => {
+  try {
+    console.log(" Fetching all users data...");
+    const response = await API_URL.get("/api/user");
+    console.log(" API Response:", response.data);
+    return response.data.data;
+  } catch (error) {
+    console.log(" something went wrong...", error);
+    return error;
+  }
+};
+
+// getting single user id
+export const asyncGetUserById = async (id: string) => {
+  try {
+    console.log(`Fetching user data for ID: ${id}...`);
+    const response = await API_URL.get(`api/user/${id}`);
+    console.log("Response of API:", response.data);
+    return response.data;
+  } catch (error) {
+    console.log("Error fetching single user by ID:", error);
+    return error;
+  }
+};

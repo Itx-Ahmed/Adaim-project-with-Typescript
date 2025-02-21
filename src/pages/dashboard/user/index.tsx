@@ -1,30 +1,30 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchUserData } from "../../../api/user/quries";
+import { useGetAllUsers, useGetSingleUser } from "../../../api/user/quries";
 
 function DashboardUsersPage() {
-  const { data, error, isLoading } = useQuery({
-    queryKey: ["userData"],
-    queryFn: fetchUserData,
-  });
+  //  Getting single user data
+  const userId = "25";
+  const { data: user, isError, isLoading } = useGetSingleUser(userId);
 
-  console.log("User data response:", data);
+  console.log("getting single userid", userId);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p className="text-red-600">Error: {error.message}</p>;
+  if (isError) {
+    return <div>Something went wrong</div>;
+  }
 
-  const users = data?.users || data?.data || [];
+  if (isLoading) {
+    return <div>loading..</div>;
+  }
+  // const { data, isLoading, error } = useGetAllUsers();
+
+  // console.log("User data:", data);
 
   return (
     <div className="min-h-screen w-full bg-gray-50 p-4 md:p-6 flex flex-col">
       <div className="w-full max-w-full mx-auto bg-white shadow-lg rounded-lg p-4 md:p-6">
-        <div className="flex items-center justify-between w-full mb-4 md:mb-6">
-          <h2 className="text-lg md:text-3xl font-bold text-gray-800">Users</h2>
-          <button className="bg-green-500 text-white px-3 py-2 rounded-lg shadow-md hover:bg-green-600 transition-all">
-            Add
-          </button>
-        </div>
-
-        <div className="overflow-x-auto mt-2 md:mt-5">
+        <h2 className="text-lg md:text-3xl font-bold text-gray-800 mb-4">
+          Users
+        </h2>
+        <div className="overflow-x-auto">
           <table className="w-full border border-gray-300 rounded-lg">
             <thead className="bg-gray-200 text-gray-700">
               <tr className="text-left text-xs md:text-sm">
@@ -33,9 +33,18 @@ function DashboardUsersPage() {
                 <th className="px-4 py-2 border">Email</th>
               </tr>
             </thead>
+
+            {/* getting single user id */}
             <tbody>
-              {users.length > 0 ? (
-                users.map((user: any) => (
+              <tr>
+                <td className="px-4 py-2 border">{user.id}</td>
+                <td className="px-4 py-2 border">{user.name}</td>
+                <td className="px-4 py-2 border">{user.email}</td>
+              </tr>
+
+              {/* getting all user id  */}
+              {/* {data.length > 0 ? (
+                data.map((user: any) => (
                   <tr
                     key={user.id}
                     className="text-sm text-gray-700 bg-white hover:bg-gray-100"
@@ -51,7 +60,7 @@ function DashboardUsersPage() {
                     No users found.
                   </td>
                 </tr>
-              )}
+              )} */}
             </tbody>
           </table>
         </div>
