@@ -1,22 +1,21 @@
-import { useGetAllUsers, useGetSingleUser } from "../../../api/user/quries";
+import { useGetSingleUser } from "../../../api/user/quries";
 
 function DashboardUsersPage() {
-  //  Getting single user data
+  // Getting single user data
   const userId = "25";
   const { data: user, isError, isLoading } = useGetSingleUser(userId);
 
   console.log("getting single userid", userId);
 
+  // localStorage.setItem("userData", userId);
+
   if (isError) {
-    return <div>Something went wrong</div>;
+    return <h1>Something went wrong</h1>;
   }
 
   if (isLoading) {
-    return <div>loading..</div>;
+    return <h1>loading..</h1>;
   }
-  // const { data, isLoading, error } = useGetAllUsers();
-
-  // console.log("User data:", data);
 
   return (
     <div className="min-h-screen w-full bg-gray-50 p-4 md:p-6 flex flex-col">
@@ -33,16 +32,15 @@ function DashboardUsersPage() {
                 <th className="px-4 py-2 border">Email</th>
               </tr>
             </thead>
-
-            {/* getting single user id */}
             <tbody>
+              {/* Getting single user data */}
               <tr>
-                <td className="px-4 py-2 border">{user.id}</td>
-                <td className="px-4 py-2 border">{user.name}</td>
-                <td className="px-4 py-2 border">{user.email}</td>
+                <td className="px-4 py-2 border">{user?.id}</td>
+                <td className="px-4 py-2 border">{user?.name}</td>
+                <td className="px-4 py-2 border">{user?.email}</td>
               </tr>
 
-              {/* getting all user id  */}
+              {/* Getting all user data  */}
               {/* {data.length > 0 ? (
                 data.map((user: any) => (
                   <tr
