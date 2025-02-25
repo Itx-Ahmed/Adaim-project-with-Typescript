@@ -23,6 +23,7 @@ export const asyncLoginUser = async (data: any) => {
   }
 };
 
+//  to read all user id
 export const asyncGetAllUsers = async () => {
   try {
     console.log(" Fetching all users data...");
@@ -35,7 +36,7 @@ export const asyncGetAllUsers = async () => {
   }
 };
 
-// getting single user id
+// To read the single user id
 export const asyncGetUserById = async (id: string) => {
   try {
     console.log(`Fetching user data for ID: ${id}...`);
@@ -47,3 +48,18 @@ export const asyncGetUserById = async (id: string) => {
     return error;
   }
 };
+
+// delete the single user from api
+export const asyncDeleteSingleUser = async (id: string) => {
+  try {
+    console.log(`Deleting user with ID: ${id}...`);
+    const response = await API_URL.delete(`/api/user/${id}`);
+    console.log("User deleted successfully:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    throw error;
+  }
+};
+
+//delete the all users from Api.
