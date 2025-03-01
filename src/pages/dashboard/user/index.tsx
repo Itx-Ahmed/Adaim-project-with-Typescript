@@ -1,23 +1,17 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useGetSingleUser, useGetAllUsers } from "../../../api/user/quries";
-import { asyncDeleteSingleUser } from "../../../api/user/fetcher";
+import { asyncDeleteUsers } from "../../../api/user/fetcher";
 
 function DashboardUsersPage() {
   const QueryClient = useQueryClient();
-  console.log(QueryClient);
 
-  // Delete user mutation
-  const DeleteMutation = useMutation({
-    mutationFn: (id: any) => asyncDeleteSingleUser(id),
+  const DeleteUsersMutation = useMutation({
+    mutationFn: (id: number) => asyncDeleteUsers(id),
     onSuccess: () => {
       console.log("User deleted successfully");
-    },
-
-    onError: (error) => {
-      console.error("Error deleting user:", error);
+      QueryClient.invalidateQueries(["users"]);
     },
   });
-
   // Fetch all users
   const { data: users, isError, isLoading } = useGetAllUsers();
   console.log("Users data response is here:", users);
@@ -61,7 +55,7 @@ function DashboardUsersPage() {
                   <td className="px-4 py-2 border text-center">
                     <button
                       className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-700 transition"
-                      onClick={() => DeleteMutation.mutate(singleUser.id)}
+                      onClick={() => DeleteUsersMutation.mutate(users.id)}
                     >
                       Delete User
                     </button>

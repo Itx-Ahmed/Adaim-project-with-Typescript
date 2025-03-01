@@ -50,7 +50,7 @@ export const asyncGetUserById = async (id: string) => {
 };
 
 // delete the single user
-export const asyncDeleteSingleUser = async (id: string) => {
+export const asyncDeleteUsers = async (id: string) => {
   try {
     console.log(`Deleting user with ID: ${id}...`);
     const response = await API_URL.delete(`/api/user/${id}`);
