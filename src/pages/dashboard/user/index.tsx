@@ -20,6 +20,7 @@ function DashboardUsersPage() {
 
   // Fetch all users
   const { data: users, isError, isLoading } = useGetAllUsers();
+  console.log("Users data response is here:", users);
 
   // Getting single user
   const userId = "25";

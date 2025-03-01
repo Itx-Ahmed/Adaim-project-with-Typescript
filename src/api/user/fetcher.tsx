@@ -49,7 +49,7 @@ export const asyncGetUserById = async (id: string) => {
   }
 };
 
-// delete the single user from api
+// delete the single user
 export const asyncDeleteSingleUser = async (id: string) => {
   try {
     console.log(`Deleting user with ID: ${id}...`);
@@ -61,5 +61,3 @@ export const asyncDeleteSingleUser = async (id: string) => {
     throw error;
   }
 };
-
-//delete the all users from Api.
