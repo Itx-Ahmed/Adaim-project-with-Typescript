@@ -23,7 +23,7 @@ export const asyncLoginUser = async (data: any) => {
   }
 };
 
-//  to read all user id
+//  to read all user
 export const asyncGetAllUsers = async () => {
   try {
     console.log(" Fetching all users data...");
@@ -36,7 +36,7 @@ export const asyncGetAllUsers = async () => {
   }
 };
 
-// To read the single user id
+// To Read the single user
 export const asyncGetUserById = async (id: string) => {
   try {
     console.log(`Fetching user data for ID: ${id}...`);
@@ -49,7 +49,7 @@ export const asyncGetUserById = async (id: string) => {
   }
 };
 
-// delete the single user
+//To Delete users
 export const asyncDeleteUsers = async (id: string) => {
   try {
     console.log(`Deleting user with ID: ${id}...`);

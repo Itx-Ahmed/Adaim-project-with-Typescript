@@ -1,28 +1,32 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useGetSingleUser, useGetAllUsers } from "../../../api/user/quries";
+import { useGetAllUsers } from "../../../api/user/quries";
 import { asyncDeleteUsers } from "../../../api/user/fetcher";
 
 function DashboardUsersPage() {
-  const QueryClient = useQueryClient();
+  // Delete users with the help of useMutation Hook.
+  const queryClient = useQueryClient();
 
-  const DeleteUsersMutation = useMutation({
-    mutationFn: (id: number) => asyncDeleteUsers(id),
+  const DeleteMutation = useMutation({
+    mutationFn: (id: any) => asyncDeleteUsers(id),
     onSuccess: () => {
       console.log("User deleted successfully");
-      QueryClient.invalidateQueries(["users"]);
+      queryClient.invalidateQueries(["users"]);
+    },
+    onError: (error) => {
+      console.log("Error in deleting...", error);
     },
   });
-  // Fetch all users
-  const { data: users, isError, isLoading } = useGetAllUsers();
-  console.log("Users data response is here:", users);
 
-  // Getting single user
-  const userId = "25";
-  const { data: singleUser } = useGetSingleUser(userId);
+  // Get all users
+  const { data: users, isLoading, isError } = useGetAllUsers();
+  console.log("data is here", users);
 
-  // Error handling
-  if (isError) return <h1>Something went wrong</h1>;
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>Something Went Wrong...</div>;
+  }
 
   return (
     <div className="min-h-screen w-full bg-gray-50 p-4 md:p-6 flex flex-col">
@@ -46,51 +50,24 @@ function DashboardUsersPage() {
               </tr>
             </thead>
             <tbody>
-              {/* Single user row */}
-              {singleUser && (
-                <tr className="text-sm text-gray-700 bg-white hover:bg-gray-100">
-                  <td className="px-4 py-2 border">{singleUser.id}</td>
-                  <td className="px-4 py-2 border">{singleUser.name}</td>
-                  <td className="px-4 py-2 border">{singleUser.email}</td>
-                  <td className="px-4 py-2 border text-center">
+              {users.map((user: any) => (
+                <tr key={user.id} className="text-sm border-t">
+                  <td className="px-4 py-2 border">{user.id}</td>
+                  <td className="px-4 py-2 border">{user.name}</td>
+                  <td className="px-4 py-2 border">{user.email}</td>
+                  <td className="px-4 py-2 border flex justify-center gap-2">
+                    <button className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-700 transition">
+                      Update
+                    </button>
                     <button
                       className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-700 transition"
-                      onClick={() => DeleteUsersMutation.mutate(users.id)}
+                      onClick={() => DeleteMutation.mutate(user.id)}
                     >
-                      Delete User
+                      Delete
                     </button>
                   </td>
                 </tr>
-              )}
-
-              {/* All users Data row */}
-              {/* Uncomment karne se yeh sab users show karega */}
-              {/* {users?.length > 0 ? (
-                users.map((user: any) => (
-                  <tr
-                    key={user.id}
-                    className="text-sm text-gray-700 bg-white hover:bg-gray-100"
-                  >
-                    <td className="px-4 py-2 border">{user.id}</td>
-                    <td className="px-4 py-2 border">{user.name}</td>
-                    <td className="px-4 py-2 border">{user.email}</td>
-                    <td className="px-4 py-2 border text-center">
-                      <button
-                        className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-700 transition"
-                        onClick={() => DeleteMutation.mutate(user.id)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan={4} className="text-center p-4 text-gray-600">
-                    No users found.
-                  </td>
-                </tr>
-              )} */}
+              ))}
             </tbody>
           </table>
         </div>
