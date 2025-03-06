@@ -26,5 +26,3 @@ export const asyncGetAllBlogs = async () => {
     return error;
   }
 };
-
-//we can get Single blog
